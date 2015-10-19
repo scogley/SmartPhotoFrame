@@ -17,12 +17,12 @@ def some_action(post):
 
 # You'll need an access token here to do anything.  You can get a temporary one
 # here: https://developers.facebook.com/tools/explorer/
-access_token = ''
+access_token = 'CAACEdEose0cBAHHipNcH1rkWkQapRU1cmnF4ZB3vvrJfZBV1JUgPihZCg1ZAgiYNBK86ztDyhjYwp5FTMM4jHyN3CHvGFi1vmmHlORhU9n6JOInz09yN2NAtAIc7I68gdBX1etzZBrFeHwJZCmmp8fzDh1hvPZC0Dnzz7GW92jhWnAAigYML0hsn3RnxXRoZCWCKINWZBsK2QJAZDZD'
 # Look at Bill Gates's profile for this example by using his Facebook id.
-user = 'Sean Cogley'
+name = 'Sean Cogley'
 
 graph = facebook.GraphAPI(access_token)
-profile = graph.get_object(user)
+profile = graph.get_object(name)
 posts = graph.get_connections(profile['id'], 'posts')
 
 # Wrap this block in a while loop so we can keep paginating requests until
