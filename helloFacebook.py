@@ -13,6 +13,9 @@ print (graph.version)
 photoId = '10152852496471951'
 photo = graph.get_object(id=photoId)
 
+# Return all connected photos for me 
+photos = graph.get_connections(id='me', connection_name='photos')
+
 # this seems to work but needs more investigation. Should return all photos I am tagged in
 #photosedge = 'me/photos'
 #photos = graph.get_object(photosedge)
