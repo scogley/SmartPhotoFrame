@@ -32,6 +32,8 @@ posts = graph.get_connections(id='me', connection_name='posts')
 for p in photo:
 	print(photo['id'])
 	print(photo['link'])
+	print(photo['from'])	
+	print(photo['created_time'])
 
 #print(photos['id'])
 
