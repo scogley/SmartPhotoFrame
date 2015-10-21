@@ -17,14 +17,8 @@ photo = graph.get_object(id=photoId)
 photosedge = graph.get_connections(id='me', connection_name='photos')
 posts = graph.get_connections(id='me', connection_name='posts')
 
-
-#works:
-#for photo in photos:
-#	print(photo, len(photo))
-
-#works:
-#for photo in photos:
-#	print(photo[0])
+#WORKS!
+print(photosedge['data'])
 
 #works:
 # Graph API Photo Node: 
@@ -35,7 +29,17 @@ print(photo['from'])
 print(photo['created_time'])
 
 
-#print(photos['id'])
+
+
+
+#works:
+#for photo in photos:
+#	print(photo, len(photo))
+
+#works:
+#for photo in photos:
+#	print(photo[0])
+
 
 # this seems to work but needs more investigation. Should return all photos I am tagged in
 #photosedge = 'me/photos'
