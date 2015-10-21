@@ -4,7 +4,7 @@ import facebook
 import requests
 # You'll need an access token here to do anything.  You can get a temporary one
 # here: https://developers.facebook.com/tools/explorer/
-access_token = 'CAACEdEose0cBAMvUwZCd7qFZCWecv4yJTogbGqrlZBvDahpMPAijDBCQkSUzqrDUcxeA2KkClsvVWPTSZAytwocFVmncbpK2cUYp1g4LTilJvJWLXTYjavnVxXeZA4zzEcmX5H6jv23KQtZC40moStuEmD1WZCcULm10nJ425NiAFGuWAmZA2PtrhXFQ40MG6t5gneD9zRD3mwZDZD'
+access_token = 'CAACEdEose0cBAJkQt9lCKgXQ4VLcZBpZBHigYKaFcg2lIcRr3xLVwU1qgMYpGvfEPUFwx1dMLvJnTAPbX1201f4lizna6hF9hYtxn0ZBuejgLUeeb0dVj6C4dgDulrJK1CwhBpNCFQgrBBZB5vQT6IqOcoHZB3cO2wgMfXpORqidcxWX8afjZB0Cz2OfR9522w9t9kNsER7gZDZD'
 
 graph = facebook.GraphAPI(access_token, version='2.2')
 print (graph.version)
@@ -14,8 +14,33 @@ photoId = '10152852496471951'
 photo = graph.get_object(id=photoId)
 
 # Return all connected photos for me 
-photos = graph.get_connections(id='me', connection_name='photos')
+photosedge = graph.get_connections(id='me', connection_name='photos')
+posts = graph.get_connections(id='me', connection_name='posts')
+
+
+#works:
+#for photo in photos:
+#	print(photo, len(photo))
+
+#works:
+#for photo in photos:
+#	print(photo[0])
+
+#works:
+# Graph API Photo Node: 
+# https://developers.facebook.com/docs/graph-api/reference/photo
+for p in photo:
+	print(photo['id'])
+	print(photo['link'])
+
+#print(photos['id'])
 
 # this seems to work but needs more investigation. Should return all photos I am tagged in
 #photosedge = 'me/photos'
 #photos = graph.get_object(photosedge)
+
+
+# Get all of the authenticated user's friends
+#friends = graph.get_connections(id='me', connection_name='friends')
+# Get all the comments from a post
+#comments = graph.get_connections(id='post_id', connection_name='comments')
