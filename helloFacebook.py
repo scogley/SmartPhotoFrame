@@ -2,9 +2,11 @@
 #using the Facebook SDK for Python
 import facebook
 import requests
+import sys
 # You'll need an access token here to do anything.  You can get a temporary one
 # here: https://developers.facebook.com/tools/explorer/
-access_token = 'CAACEdEose0cBAD6uV4GZACAHc9fibbQdwpxNk0fBjWsVBa0frTNbARWCKW7KxZCa0yghJ44CSeerG8nrjWnDoK5e27W6vMjUPgL1AewEIwDu6MEuY9aiYmz0nvCQJaASZA4TmtRD9LCaCURqqVaihzr08MZBXTcRqnt9spCivpUbW2uwwwcRkCWuCr2haIpkyAAedvZCmrgZDZD'
+#access_token = ''
+access_token = sys.argv
 
 graph = facebook.GraphAPI(access_token, version='2.2')
 print (graph.version)
