@@ -26,20 +26,21 @@ for p in photosedge['data']:
 	#filepath = '/cygdrive/c/Users/sean/photoframe/' + id  + '.jpg'
 	#filepath = '/home/pi/photoframe/fb/' + id  + '.jpg'
 	print(filepath)
-	r = requests.get(url)
+	r = requests.get(url, stream =True)
 	print(r.status_code)	
-	try:
-		image_file = open(filepath, 'wb')
-	except IOError:		
-		image_file = open(filepath, 'wb')
-		image_file.write(r.content)
-		image_file.close()
+	with open(filepath, 'wb') as fd:
+		for chunk in r.iter_content(chunk_size):
+			fd.write(chunk)
 
-	#image_file = open(filepath)
-        #print ("---> Already have file")
-    	#except IOError:
-        #print ("---> Downloading %s" % url)
 
+	#try:
+	#	image_file = open(filepath, 'wb')
+	#except IOError:		
+	#	image_file = open(filepath, 'wb')
+	#	image_file.write(r.content)
+	#	image_file.close()
+
+	
     
     
 
