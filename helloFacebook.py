@@ -8,7 +8,8 @@ import sys
 #access_token = ''
 access_token = sys.argv
 
-graph = facebook.GraphAPI(access_token, version='2.2')
+#graph = facebook.GraphAPI(access_token, version='2.2')
+graph = facebook.GraphAPI(access_token)
 print (graph.version)
 
 # Return all connected photos for me. 
