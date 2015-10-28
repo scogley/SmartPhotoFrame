@@ -3,6 +3,7 @@
 import facebook
 import requests
 import sys
+sys.path.append("/usr/lib/python3/dist-packages/src/facebook-sdk") #this is the directory where facebook-sdk is installed
 # You'll need an access token here to do anything.  You can get a temporary one
 # here: https://developers.facebook.com/tools/explorer/
 #access_token = ''
