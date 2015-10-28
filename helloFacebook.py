@@ -9,8 +9,8 @@ sys.path.append("/usr/lib/python3/dist-packages/src/facebook-sdk") #this is the 
 #access_token = ''
 access_token = sys.argv
 
-#graph = facebook.GraphAPI(access_token, version='2.2')
-graph = facebook.GraphAPI(access_token)
+graph = facebook.GraphAPI(access_token, version='2.2')
+#graph = facebook.GraphAPI(access_token)
 print (graph.version)
 
 # Return all connected photos for me. 
