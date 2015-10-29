@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 #using the Facebook SDK for Python
 import facebook
-import requests
+#import requests
 import sys
+import webbrowser
 # You'll need an access token here to do anything.  You can get a temporary one
 # here: https://developers.facebook.com/tools/explorer/
 #access_token = ''
@@ -21,13 +22,6 @@ for p in photosedge['data']:
 	#print(p['source'])
 	url = (p['source'])
 	print(url)
-	r = requests.get(url)
-	print(r.status_code)
-    #image_file = open(path, 'w')
-    #image_file.write(r.content)
-    #image_file.close()
-
-
-#TODO
-# use the Linux framebuffer app to render the image
-# sample: fbi -noverbose -m 640x480 -a -u -t 6 /home/pi/art/**/*
+	id = (p['id'])
+	print(id)	
+	webbrowser.open(url, new=0, autoraise=True)	
