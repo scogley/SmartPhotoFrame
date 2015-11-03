@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 #using the Facebook SDK for Python
 import facebook
 import urllib
