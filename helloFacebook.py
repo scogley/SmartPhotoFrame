@@ -28,7 +28,7 @@ for p in photosedge['data']:
 	print(url)
 	# using urllib
 f = open(filepath,'wb')
-f.write(urllib.urlopen('http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3c6263c3453b').read())
+f.write(urllib.urlopen(url).read())
 f.close()
 
 
