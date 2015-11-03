@@ -27,9 +27,9 @@ for p in photosedge['data']:
 	url = (p['source'])
 	print(url)
 	# using urllib
-f = open(filepath,'wb')
-f.write(urllib.urlopen(url).read())
-f.close()
+	f = open(filepath,'wb')
+	f.write(urllib.urlopen(url).read())
+	f.close()
 
 
 #TODO
