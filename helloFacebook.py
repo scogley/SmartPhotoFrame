@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+
 #using the Facebook SDK for Python
 import facebook
-import requests
+import urllib
 import sys
 # You'll need an access token here to do anything.  You can get a temporary one
 # here: https://developers.facebook.com/tools/explorer/
@@ -18,14 +18,18 @@ photosedge = graph.get_connections(id='me', connection_name='photos')
 #WORKS! 
 #for each object in photosedge print the img source url
 for p in photosedge['data']:
-	#print(p['source'])
+	# get the id of the photo and print it
+	id = (p['id'])
+	print(id)
+	# a unique file name using id
+	filepath = id  + '.jpg'
+	# get the img source url and print it
 	url = (p['source'])
 	print(url)
-	r = requests.get(url)
-	print(r.status_code)
-    #image_file = open(path, 'w')
-    #image_file.write(r.content)
-    #image_file.close()
+	# using urllib
+	f = open(filepath,'wb')
+	f.write(urllib.urlopen(url).read())
+	f.close()
 
 
 #TODO
