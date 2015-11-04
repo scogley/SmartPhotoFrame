@@ -34,4 +34,15 @@ for p in photosedge['data']:
 
 #TODO
 # use the Linux framebuffer app to render the image
+# here's a sample bash script
+#! /bin/bash
+# This shell script "StartSlideshow" starts a slide show using frame buffer imaging device
+# with -t 360 => 360 sec between pictures
+# -a enable autozoom
+# -u randomize the order of the filenames
+#fbi -noverbose -u -a -t 360 /home/pi/FramePics/*.*
+
+
+# other examples
 # sample: fbi -noverbose -m 640x480 -a -u -t 6 /home/pi/art/**/*
+# sample: fbi -noverbose -m 640x480 -a -u -t 6 *.jpg
