@@ -22,14 +22,21 @@ for p in photosedge['data']:
 	id = (p['id'])
 	print(id)
 	# a unique file name using id
-	filepath = id  + '.jpg'
+	filename = id  + '.jpg'
 	# get the img source url and print it
 	url = (p['source'])
 	print(url)
 	# using urllib
-	f = open(filepath,'wb')
-	f.write(urllib.urlopen(url).read())
-	f.close()
+	# it is good practice to use the with keyword when dealing with file objects.
+	# This has the advantage that the file is properly closed after writing is finished, even if an exception is raised.
+	# It is also much shorter than writing try-finally block.
+	with open(filename,'wb') as f:
+		f.write(urllib.urlopen(url).read())
+		f.close
+	# old way
+	# f = open(filepath,'wb')
+	# f.write(urllib.urlopen(url).read())
+	# f.close()
 
 
 #TODO
