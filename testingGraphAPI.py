@@ -16,4 +16,5 @@ albums = graph.get_connections(profile['id'], 'albums')
 
 for a in albums['data']:
 	id = (a['id'])
-	print(id)	
+	name = (a['name'])
+	print(id + ' ' + name)
