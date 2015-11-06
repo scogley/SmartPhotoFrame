@@ -27,5 +27,16 @@ iosAlbum = graph.get_object(id='4731781457001?fields=photos')
 photos = iosAlbum['photos']
 data = (photos['data'])
 for d in data:
-	source = (d['source'])
-	print(source) # this is the source url for the image!
+	id = (d['id'])
+	url = (d['source'])	
+	# a unique file name using id
+	filename = id  + '.jpg'
+	print (id)
+	print(url) # this is the source url for the image!
+	# using urllib
+	# it is good practice to use the with keyword when dealing with file objects.
+	# This has the advantage that the file is properly closed after writing is finished, even if an exception is raised.
+	# It is also much shorter than writing try-finally block.
+	with open(filename,'wb') as f:
+		f.write(urllib.urlopen(url).read())
+		f.close
