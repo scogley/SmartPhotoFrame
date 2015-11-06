@@ -33,11 +33,7 @@ for p in photosedge['data']:
 	with open(filename,'wb') as f:
 		f.write(urllib.urlopen(url).read())
 		f.close
-	# old way
-	# f = open(filepath,'wb')
-	# f.write(urllib.urlopen(url).read())
-	# f.close()
-
+	
 
 #TODO
 # use the Linux framebuffer app to render the image
@@ -51,5 +47,6 @@ for p in photosedge['data']:
 
 
 # other examples
+# sample: fbi -noverbose -a -u -t 30 *.jpg
 # sample: fbi -noverbose -m 640x480 -a -u -t 6 /home/pi/art/**/*
 # sample: fbi -noverbose -m 640x480 -a -u -t 6 *.jpg
