@@ -22,9 +22,34 @@ for a in albums['data']:
 # The above returns the id of each album. 
 # Using the id of iOS Photos to get the album object and return photos field
 # using graph api explorer: 4731781457001?fields=photos
+# works! prints the source img url for each image in the album
+iosAlbum = graph.get_object(id='4731781457001?fields=photos')
+photos = iosAlbum['photos']
+data = (photos['data'])
+for d in data:
+	source = (d['source'])
+	print(source) # this is the source url for the image!
+
+
+# works! prints the source url 
+# iosAlbum = graph.get_object(id='4731781457001?fields=photos')
+# photos = iosAlbum['photos']
+# data = (photos['data'])
+# source = (data[0])['source']
+# print(source) # this is the source url for the image!
+
+
+# works! prints all the objects in photos/data
+# iosAlbum = graph.get_object(id='4731781457001?fields=photos')
+# photos = iosAlbum['photos']
+# data = (photos['data'])
+# id = (data[0])
+# print(id)
+
 
 # works!
-iosAlbum = graph.get_object(id='4731781457001?fields=photos')
-for i in iosAlbum['photos']:
-	data = (i[0])
-	id = (data[0])
+# iosAlbum = graph.get_object(id='4731781457001?fields=photos')
+# for i in iosAlbum['photos']:
+# 	data = (i[0])
+# 	id = (data[0])
+# 	print(id)
